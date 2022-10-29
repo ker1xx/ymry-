@@ -1,0 +1,15 @@
+C:\Users\я\source\repos\fuuuuck\fuuuuck\bin\Debug\net6.0\fuuuuck.exe
+C:\Users\я\source\repos\fuuuuck\fuuuuck\bin\Debug\net6.0\fuuuuck.deps.json
+C:\Users\я\source\repos\fuuuuck\fuuuuck\bin\Debug\net6.0\fuuuuck.runtimeconfig.json
+C:\Users\я\source\repos\fuuuuck\fuuuuck\bin\Debug\net6.0\fuuuuck.dll
+C:\Users\я\source\repos\fuuuuck\fuuuuck\bin\Debug\net6.0\fuuuuck.pdb
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.csproj.AssemblyReference.cache
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.AssemblyInfoInputs.cache
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.AssemblyInfo.cs
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.csproj.CoreCompileInputs.cache
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.dll
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\refint\fuuuuck.dll
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.pdb
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\fuuuuck.genruntimeconfig.cache
+C:\Users\я\source\repos\fuuuuck\fuuuuck\obj\Debug\net6.0\ref\fuuuuck.dll
