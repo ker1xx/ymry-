@@ -10,8 +10,9 @@ namespace fuuuuck
 {
     internal class order
     {
-        public int Hueta(int back)
+        public int metod(int back)
         {
+            string itog = "";
             int sum = 0;
             int pos = 2;
             int peremen = 0;
@@ -19,6 +20,7 @@ namespace fuuuuck
             ConsoleKeyInfo key = new ConsoleKeyInfo((char)ConsoleKey.A, ConsoleKey.A, false, false, false);
             while (key.Key != ConsoleKey.O)
             {
+                cake chiks = new cake("",0);
                 cake kvadrat = new cake("Квадрат", 350);
                 cake oval = new cake("Овал", 450);
                 cake krug = new cake("Круг", 500);
@@ -47,41 +49,31 @@ namespace fuuuuck
                 List<cake> glaze = new List<cake> { karamel, beze, yagodi, chocolade };
                 List<cake> taste = new List<cake> { shokolad_korzhi, malina_korzhi, molochnie_korzhi, vafelnia_korzhi };
                 List<cake> size = new List<cake> { mini, small, medium, large };
-                List<cake> itog = new List<cake>();
                 Console.WriteLine("Добро пожаловать в кондирскую 'Не жирней'\nЧтобы сделать заказ, выберите один из пунктов в каждой категории:");
                 Console.WriteLine("  Форма коржа");
                 Console.WriteLine("  Размер коржа");
                 Console.WriteLine("  Глазурь");
                 Console.WriteLine("  Вкус коржа");
                 Console.WriteLine("  Декор торта");
+                Console.WriteLine("  Завершить заказ");
                 Console.WriteLine("Сумма вашего заказа: " + sum);
                 Console.WriteLine("Ваш заказ: " + itog);
-                /*                sum = sum + form[0].price;
-                                Console.WriteLine(sum);*/
-                if ((pos == 2) && (key.Key == ConsoleKey.Enter))
+                if (key.Key == ConsoleKey.Enter)
                 {
-                    Console.Clear();
-                    sum = pushout(form, sum);
-                }
-                else if ((pos == 3) && (key.Key == ConsoleKey.Enter))
-                {
-                    Console.Clear();
-                    sum = pushout(decor, sum);
-                }
-                else if ((pos == 4) && (key.Key == ConsoleKey.Enter))
-                {
-                    Console.Clear();
-                    sum = pushout(glaze, sum);
-                }
-                else if ((pos == 5) && (key.Key == ConsoleKey.Enter))
-                {
-                    Console.Clear();
-                    sum = pushout(taste, sum);
-                }
-                if ((pos == 6) && (key.Key == ConsoleKey.Enter))
-                {
-                    Console.Clear();
-                    sum = pushout(size, sum);
+                    if (pos == 2)
+                        chiks = pushout(form);
+                    else if (pos == 3)
+                        chiks = pushout(decor);
+                    else if (pos == 4)
+                        chiks = pushout(glaze);
+                    else if (pos == 5)
+                        chiks = pushout(taste);
+                    if (pos == 6)
+                        chiks = pushout(size);
+                    else if (pos == 7)
+                        create(itog,sum);
+                    sum += chiks.price;
+                    itog += chiks.name + "; ";
                 }
                 if (key.Key == ConsoleKey.DownArrow)
                 {
@@ -102,8 +94,10 @@ namespace fuuuuck
             }
             return back;
         }
-        private int pushout(List<cake> gg, int summ)
+        private cake pushout(List<cake> gg)
         {
+            Console.Clear();
+            cake summ = new cake("", 0);
             ConsoleKeyInfo key = new ConsoleKeyInfo((char)ConsoleKey.A, ConsoleKey.A, false, false, false);
             int pos = 0;
             int i = 0;
@@ -131,39 +125,39 @@ namespace fuuuuck
                 key = Console.ReadKey();
                 Console.Clear();
             }
-                if ((pos == 0) && (key.Key == ConsoleKey.Enter))
-                {
-                    summ = summ + gg[0].price;
-                    Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[0].name);
-
-                }
-                if ((pos == 1)&& (key.Key == ConsoleKey.Enter))
-                {
-                    summ = summ + gg[1].price;
-
-                    Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[1].name);
-
-                }
-                if ((pos == 2)&& (key.Key == ConsoleKey.Enter))
-                {
-                    summ = summ + gg[2].price;
-
-                    Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[2].name);
-
-                }
-                if ((pos == 3)&& (key.Key == ConsoleKey.Enter))
-                {
-                    summ = summ + gg[3].price;
-
-                    Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[3].name); /*я пытался через поз вывести через гг.прайс через гг.нейм через кейс пытался по позу сделать через рандомно созданную переменную через иф через кейс через присвоение значения прайса переменной а потом ретурном ничего не получилось*/
-
-                }
-                return summ;
+            if ((pos == 0) && (key.Key == ConsoleKey.Enter))
+            {
+                summ = gg[0];
+                Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[0].name);
+            }
+            if ((pos == 1) && (key.Key == ConsoleKey.Enter))
+            {
+                summ = gg[1];
+                Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[1].name);
+            }
+            if ((pos == 2) && (key.Key == ConsoleKey.Enter))
+            {
+                summ = gg[2];
+                Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[2].name);
+            }
+            if ((pos == 3) && (key.Key == ConsoleKey.Enter))
+            {
+                summ = gg[3];
+                Console.WriteLine("В ваш заказ был добавлен элемент: " + gg[3].name);
+            }
+            return summ;
         }
-        private void create()
+        private void create(string itog, int sum)
         {
-            string way = "C:\\Users\\я\\Desktop";
-            File.Create(way);
+            itog += Convert.ToString(sum);
+            string way = "C:\\Users\\я\\Desktop\\order.txt";
+            if (File.Exists(way))
+                File.WriteAllText(way, itog);
+            else
+            {
+                File.Create(way);
+                File.AppendAllText(way, itog);
+            }
         }
     }
 

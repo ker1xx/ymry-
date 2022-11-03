@@ -14,26 +14,7 @@ namespace fuuuuck
             while (key.Key != ConsoleKey.O)
             {
                 order podklass = new order();
-                podklass.Hueta(sum);
-/*                if (key.Key == ConsoleKey.Enter)
-                {
-                    
-                }
-                if (key.Key == ConsoleKey.DownArrow)
-                {
-                    pos++;
-                }
-                if (key.Key == ConsoleKey.UpArrow)
-                {
-                    pos--;
-                }
-                if (key.Key == ConsoleKey.Escape)
-                {
-                }
-                Console.SetCursorPosition(0, pos);
-                if (key.Key != ConsoleKey.Enter)
-                    Console.WriteLine("->");
-                key = Console.ReadKey();*/
+                podklass.metod(sum);
             }
         }
     }
